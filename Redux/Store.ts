@@ -1,9 +1,12 @@
 import {configureStore} from '@reduxjs/toolkit';
-import ActionSlice from './ActionSlice';
+import ActionSlice from './Reducer/ActionSlice';
+import MovieReducer from './Reducer/MovieReducer';
 import {BaseAPI} from '../Api/Endpoint';
+
 export const Store = configureStore({
   reducer: {
     actionslice: ActionSlice,
+    MovieReducer: MovieReducer,
     [BaseAPI.reducerPath]: BaseAPI.reducer,
   },
   middleware: getDefaultMiddleware =>
